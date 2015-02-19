@@ -15,6 +15,17 @@
     int girl;
 }
 
+static Contador *contador = nil;
+
++ (Contador *)sharedInstance {
+    
+    if(contador == nil) {
+        contador = [[Contador alloc] init];
+    }
+    
+    return contador;
+}
+
 -(id)init {
     self = [super init];
     if (self) {
@@ -37,6 +48,10 @@
 
 -(int)getGirls {
     return girl;
+}
+
+- (int)getTotal {
+    return boy + girl;
 }
 
 

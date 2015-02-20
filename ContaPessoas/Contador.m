@@ -14,6 +14,8 @@
     int boy;
     int girl;
 }
+@synthesize delegate;
+
 
 static Contador *contador = nil;
 
@@ -37,9 +39,13 @@ static Contador *contador = nil;
 
 - (void)maisUmCueca {
     boy = boy + 1;
+    
+    [delegate atualiza];
 }
 - (void)maisUmaGata {
     girl++;
+    
+    [delegate atualiza];
 }
 
 -(int)getBoys {

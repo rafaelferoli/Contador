@@ -6,9 +6,16 @@
 //  Copyright (c) 2015 Vinicius Miana. All rights reserved.
 //
 
-@interface Contador : NSObject
+#import "Mostrador.h"
+
+@interface Contador : NSObject {
+    
+    id <Mostrador> delegate;
+}
 
 + (Contador *)sharedInstance;
+
+@property (retain)id delegate;
 
 - (void)maisUmCueca;
 - (void)maisUmaGata;
